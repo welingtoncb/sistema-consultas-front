@@ -74,17 +74,16 @@ export class ClienteAddComponent implements OnInit {
       this.clienteService.getCoverage(this.cliente.plano.id, this.cliente.procedimento.id).subscribe(
         (res: number) => {
           if (res === 1) {
-            this.toastService.success('Procedimento coberto pelo plano.');
+            this.toastService.success('Procedimento coberto pelo plano!');
           } else {
-            this.toastService.error('Procedimento não coberto pelo plano.');
+            this.toastService.error('Procedimento não coberto pelo plano!');
             this.cliente.plano = new Plano;
             this.cliente.procedimento = new Procedimento;
           }
         }
-      )
+      );
     } else {
       return;
     }
-
   }
 }

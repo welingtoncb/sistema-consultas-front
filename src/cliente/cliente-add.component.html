@@ -32,7 +32,7 @@
       <div class="ui-input-m">
         <p-dropdown [options]='procedimentos' [(ngModel)]="cliente.procedimento.id" [filter]="true"
         placeholder="Procedimentos:" name="procedimento" [required]="true"
-        (onChange)="validaCobertura()"></p-dropdown>
+        (onChange)="validaCobertura()" [disabled]="this.cliente.plano.id ? '' : 'disabled'"></p-dropdown>
       </div>
 
       <div class="ui-input-m">
@@ -63,7 +63,7 @@
         <span class="ui-float-label">
           <input id="complemento" type="text" maxlength="50" [(ngModel)]="cliente.complemento"
                        name="complentocliente" required pInputText>
-          <label for="complemento">complemento</label>
+          <label for="complemento">Complemento</label>
         </span>
       </div>
 
@@ -87,7 +87,7 @@
         <span class="ui-float-label">
           <input id="cidade" type="text" maxlength="50" [(ngModel)]="cliente.cidade"
                        name="cidadecliente" required pInputText>
-          <label for="cidade">cidade</label>
+          <label for="cidade">Cidade</label>
         </span>
       </div>
 
