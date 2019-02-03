@@ -1,0 +1,110 @@
+<div class="ui-card">
+  <form #clienteForm="ngForm" (ngSubmit)="save(clienteForm)">
+
+    <div class="ui-card-header">
+      <h2>Cadastrar cliente</h2>
+    </div>
+
+    <div class="ui-card-body">
+
+      <div class="ui-input-m">
+        <span class="ui-float-label">
+          <input id="nome" type="text" maxlength="150" size="65" [(ngModel)]="cliente.nome"
+                 name="nomecliente" pInputText required>
+          <label for="nome">Nome</label>
+        </span>
+      </div>
+
+      <div class="ui-input-m">
+        <span class="ui-float-label">
+          <p-inputMask id="cpf" type="text" maxlength="15" [(ngModel)]="cliente.cpf"
+                       name="cpfcliente" mask="999.999.999-99" required></p-inputMask>
+          <label for="cpf">CPF</label>
+        </span>
+      </div>
+
+      <div class="ui-input-m">
+        <p-dropdown [options]='planos' [(ngModel)]="cliente.plano.id" [filter]="true"
+        placeholder="Plano:" name="plano" [required]="true"
+        (onChange)="validaCobertura()"></p-dropdown>
+      </div>
+
+      <div class="ui-input-m">
+        <p-dropdown [options]='procedimentos' [(ngModel)]="cliente.procedimento.id" [filter]="true"
+        placeholder="Procedimentos:" name="procedimento" [required]="true"
+        (onChange)="validaCobertura()"></p-dropdown>
+      </div>
+
+      <div class="ui-input-m">
+        <span class="ui-float-label">
+          <input id="email" type="email" maxlength="150" size="65" [(ngModel)]="cliente.email"
+                 name="emailcliente" pInputText email="true">
+          <label for="nome">E-mail</label>
+        </span>
+      </div>
+
+      <div class="ui-input-m">
+        <span class="ui-float-label">
+          <input id="logradouro" type="text" maxlength="50" [(ngModel)]="cliente.logradouro"
+                       name="logradourocliente" required pInputText>
+          <label for="logradouro">Endereço</label>
+        </span>
+      </div>
+
+      <div class="ui-input-m">
+        <span class="ui-float-label">
+          <input id="numero" type="text" maxlength="30" [(ngModel)]="cliente.numero"
+                       name="numerocliente" required pInputText>
+          <label for="numero">Número</label>
+        </span>
+      </div>
+
+      <div class="ui-input-m">
+        <span class="ui-float-label">
+          <input id="complemento" type="text" maxlength="50" [(ngModel)]="cliente.complemento"
+                       name="complentocliente" required pInputText>
+          <label for="complemento">complemento</label>
+        </span>
+      </div>
+
+      <div class="ui-input-m">
+        <span class="ui-float-label">
+          <input id="bairro" type="text" maxlength="50" [(ngModel)]="cliente.bairro"
+                       name="bairrocliente" required pInputText>
+          <label for="bairro">Bairro</label>
+        </span>
+      </div>
+
+      <div class="ui-input-m">
+        <span class="ui-float-label">
+          <input id="cep" type="text" maxlength="10" [(ngModel)]="cliente.cep"
+                       name="cepcliente" required pInputText mask="99.999-999">
+          <label for="logradouro">CEP</label>
+        </span>
+      </div>
+
+      <div class="ui-input-m">
+        <span class="ui-float-label">
+          <input id="cidade" type="text" maxlength="50" [(ngModel)]="cliente.cidade"
+                       name="cidadecliente" required pInputText>
+          <label for="cidade">cidade</label>
+        </span>
+      </div>
+
+      <div class="ui-input-m">
+        <span class="ui-float-label">
+          <input id="estado" type="text" maxlength="30" [(ngModel)]="cliente.estado"
+                       name="estadocliente" required pInputText>
+          <label for="estado">UF</label>
+        </span>
+      </div>
+
+      <div class="ui-m">
+        <p-button label="Salvar" styleClass="ui-button-info" type="submit"></p-button>
+        <p-button label="Cancelar" styleClass="ui-button-info" (onClick)="clearScreen()" type="button"></p-button>
+      </div>
+
+    </div>
+
+  </form>
+</div>

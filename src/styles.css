@@ -1,0 +1,51 @@
+body {
+  margin: 0.3em;
+  font-family: Roboto, sans-serif;
+}
+
+.top-toolbar {
+  padding: 1em;
+  background-color: #1e1eff;
+  color: white;
+  font-weight: bold;
+}
+
+.ui-m {
+  padding: 1em;
+}
+
+.ui-button.ui-state-default.ui-button-info {
+  margin: 2px;
+}
+
+.ui-button.ui-state-default.ui-button-success {
+  margin: 2px;
+}
+
+.ui-button.ui-state-default.ui-button-danger {
+  margin: 2px;
+}
+
+.ui-button.ui-state-default.ui-button-secondary {
+  margin: 2px;
+}
+
+.ui-card-header {
+  padding-left: 1em;
+}
+
+.ui-input-m {
+  padding: 1em;
+  margin-right: 1em;
+  margin-left: 1em;
+}
+
+.login-card {
+  background-color: #5959de;
+  width: 16em;
+  display: inline-block;
+}
+
+.login-wrapper {
+  text-align: center;
+}
